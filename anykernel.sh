@@ -46,7 +46,7 @@ replace_string init.rc "cpuctl cpu,timer_slack" "mount cgroup none /dev/cpuctl c
 
 # init.tuna.rc
 backup_file init.tuna.rc;
-insert_line init.tuna.rc "nodiratime barrier=0" after "mount_all /fstab.tuna" "\tmount ext4 /dev/block/platform/omap/omap_hsmmc.0/by-name/userdata /data remount nosuid nodev noatime nodiratime barrier=0";
+insert_line init.tuna.rc "nodiratime barrier=0" after "mount_all /fstab.tuna" "\tmount ext4 /dev/block/platform/bootdevice/by-name/userdata /data remount nosuid nodev noatime nodiratime barrier=0";
 append_file init.tuna.rc "bootscript" init.tuna;
 
 # fstab.tuna
